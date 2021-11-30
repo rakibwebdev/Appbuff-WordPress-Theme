@@ -1,0 +1,106 @@
+/**
+ * Theme Name: Xpeedstudio starter theme
+ * Theme URI: https://themeforest.net/user/xpeedstudio/portfolio?ref=XpeedStudio
+ * Description: This is a skull theme which we use to develope new themes. textdomain: appbuff, class: Xsprefix, var: $appbuff_, constants: APPBUFFF_, function: appbuff_
+ *
+ */
+
+
+ /* Table of Content
+********************************
+# Reset & Basics
+# Basic
+# Typography
+# Links
+# Buttons
+# Menu
+# Main Content
+# Core WordPress
+# Search
+# Blog
+# Widget
+# Footer
+# Resonsive
+*/
+
+/* Global
+================================================== */
+
+
+
+/* Header
+================================================== */
+
+.xs-header {
+    background: #fff;
+    border-bottom: 1px solid #dddddd;
+    z-index: 999999;
+    .site-title{
+        font-size: 30px;
+        margin-top:30px;
+    }//Site title end
+}
+
+/* Main menu 
+================================================== */
+
+.navbar{
+    .navbar-toggler {
+        position: absolute;
+        right: 0;
+        top: -50px;
+        margin: auto;
+    }
+}
+
+.navbar-nav.main-menu{
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    position: relative;
+    li{
+        position: relative;
+        float: none;
+        display: inline-block;
+        margin-left: 10px;
+        a{
+            color: #080808;
+            line-height: 80px;
+        }
+    }//li end
+}//ul end
+
+
+/* Main container
+================================================== */
+.main-container {
+    padding: 80px 0;
+}
+
+/* Blog
+================================================== */
+
+.entry-header{
+    .entry-title {
+        font-size: 28px;
+        a{
+            color: #323232;
+        }
+    }
+}
+
+.post-meta{
+    color: $gray-color;
+    font-size: 14px;
+    span{
+        padding-right: 10px;
+        margin-right: 10px;
+        i{
+            margin-right: 5px;
+        }
+    }
+    a {
+        color: #959595;
+    }
+}
