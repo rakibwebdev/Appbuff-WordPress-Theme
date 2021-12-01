@@ -32,6 +32,37 @@
           'walker'          => new appbuff_navwalker()
         ]);
       ?>
+      <div>
+        <ul>
+          <!--menu right border-->
+          <li class="contact-show">
+            <a href="#" class="btn-round- trngl btn-br bg-btn"><i class="fas fa-phone-alt"></i></a>
+            <div class="contact-inquiry">
+            <div class="contact-info-">
+              <div class="contct-heading">Avilable on WhatsApp</div>
+              <div class="inquiry-card-nn hrbg">
+              <div class="title-inq-c">FOR HR DEPARTMENT</div>
+              <ul>
+                  <li class="mb0"><img src="images/flags/us.svg" alt="us office" class="flags-size"> <a href="https://wa.me/+8801713138255" >+880 1713 138 255</a></li>
+              </ul>
+              </div>
+              <div class="inquiry-card-nn">
+              <div class="title-inq-c">FOR SALES DEPARTMENT</div>
+              <ul>
+                  <li><a href="https://wa.me/+8801712027879"><img src="images/flags/us.svg" alt="Bangladesh office" class="flags-size"> +880 1712 027 879</a></li>
+                  <li><a href="https://wa.me/+8801712027879"><img src="images/flags/us.svg" alt="US office" class="flags-size"> +1-123-456-7890</a></li>
+                  <li><i class="fab fa-skype"></i><a href="skype:adaptcoder?call" >adaptcoder</a></li>
+                  <li><i class="fas fa-envelope"></i><a href="mailto:info@appbuff.io">info@appbuff.io</a></li>
+              </ul>
+              </div>
+            </div>
+            </div>
+          </li>
+          <li>
+            <a href="get-quote.html" class="btn-br bg-btn3 btshad-b2 lnk">Client Area<span class="circle"></span></a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>
