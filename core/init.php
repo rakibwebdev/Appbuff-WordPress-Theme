@@ -3,7 +3,7 @@
  * includes all files and trigger the action hook by load
  */
 
-class Xsprefix_Theme_Includes {
+class Appbuff_Theme_Includes {
 
 	private static $rel_path	 = null;
 	private static $initialized	 = false;
@@ -60,7 +60,6 @@ class Xsprefix_Theme_Includes {
 		return self::$rel_path . $append;
 	}
 
-
     // directory path for theme core, if child theme activated
     // ----------------------------------------------------------------------------------------
 	public static function get_parent_path( $rel_path, $frag = 'rel' ) {
@@ -101,7 +100,7 @@ class Xsprefix_Theme_Includes {
 				self::include_isolated( $path . '/widget-class.php' );
 			}
         }
-		register_widget( 'Xsprefix_' . self::dirname_to_classname( $widget_dir ) );
+		register_widget( 'Appbuff_' . self::dirname_to_classname( $widget_dir ) );
 	}
 
 
@@ -180,6 +179,7 @@ class Xsprefix_Theme_Includes {
         
         // register widget areas
 		self::include_child_first( '/hooks/widget-areas.php' );
+
     }
     
 
@@ -201,10 +201,8 @@ class Xsprefix_Theme_Includes {
     // include widgets
     // ----------------------------------------------------------------------------------------
 	public static function _action_widgets_init() {
-        self::include_widget('instagram');
-        self::include_widget('recent-post');
-        self::include_widget('social');
-        self::include_widget('footer-address');
+        // self::include_widget('recent-post');
+        // self::include_widget('footer-address');
 	}
 
 	
@@ -234,4 +232,4 @@ class Xsprefix_Theme_Includes {
 
 }
 
-Xsprefix_Theme_Includes::init();
+Appbuff_Theme_Includes::init();

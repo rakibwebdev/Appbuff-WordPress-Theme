@@ -9,7 +9,7 @@
 if ( !is_admin() ) {
 
 	// 3rd party css
-	wp_enqueue_style('appbuff-fonts', appbuff_google_fonts_url(), null, APPBUFFF_VERSION );
+	wp_enqueue_style('appbuff-fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Poppins:wght@300;400;500;600;700;800;900&amp;display=swap', null, APPBUFFF_VERSION );
 	wp_enqueue_style( 'bootstrap', APPBUFFF_CSS . '/bootstrap.min.css', null, APPBUFFF_VERSION );
 	wp_enqueue_style( 'plugin-style', APPBUFFF_CSS . '/plugin.min.css', null, APPBUFFF_VERSION );
 	wp_enqueue_style( 'responsive-style', APPBUFFF_CSS . '/responsive.css', null, APPBUFFF_VERSION );
@@ -24,8 +24,8 @@ if ( !is_admin() ) {
 
 	// 3rd party scripts
 	wp_enqueue_script( 'bootstrap', APPBUFFF_JS . '/bootstrap.bundle.min.js', array( 'jquery' ), APPBUFFF_VERSION, true );
-	wp_enqueue_script( 'appbuff-form', APPBUFFF_JS . '/form.js', array( 'jquery' ), APPBUFFF_VERSION, true );
-	wp_enqueue_script( 'appbuff-cookie', APPBUFFF_JS . '/jquery.ihavecookies.js', array( 'jquery' ), APPBUFFF_VERSION, true );
+	//wp_enqueue_script( 'appbuff-form', APPBUFFF_JS . '/form.js', array( 'jquery' ), APPBUFFF_VERSION, true );
+	//wp_enqueue_script( 'appbuff-cookie', APPBUFFF_JS . '/jquery.ihavecookies.js', array( 'jquery' ), APPBUFFF_VERSION, true );
 	wp_enqueue_script( 'owl-carousel', APPBUFFF_JS . '/form.js', array( 'jquery' ), APPBUFFF_VERSION, true );
 
 	// theme scripts

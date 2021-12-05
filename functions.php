@@ -97,6 +97,8 @@ add_filter('fw_framework_customizations_dir_rel_path', '_filter_appbuff_framewor
 // ----------------------------------------------------------------------------------------
 require_once( APPBUFFF_CORE . '/init.php');
 
+require_once( APPBUFFF_COMPONENTS . '/elementor/elementor.php'); // elementor widgets
+
 
 // function new_submenu_class($menu) {
 //     $menu = preg_replace('/ class="sub-menu"/','/ class="nav-dropdown" /',$menu);
@@ -111,3 +113,9 @@ function add_link_atts($atts) {
 }
 add_filter( 'nav_menu_link_attributes', 'add_link_atts');
 
+// Remove unused css library
+add_action( 'wp_enqueue_scripts', 'appbuff_remove_unused_css_files', 9999 );
+function appbuff_remove_unused_css_files() {
+    wp_dequeue_style( 'elementor-global' );
+    wp_deregister_style( 'elementor-global' );
+}

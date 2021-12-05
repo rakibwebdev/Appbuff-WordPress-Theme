@@ -8,25 +8,19 @@
 
 <?php get_header(); ?>
 
-<div class="woo-xs-content"  role="main">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-				<?php while ( have_posts() ) : the_post(); ?>
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div class="home-page"  role="main">
+	<?php while ( have_posts() ) : the_post(); ?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-						<!-- Article content -->
-						<div class="entry-content">
-							<?php the_content(); ?>
-						</div> <!-- end entry-content -->
+			<!-- Article content -->
+			<div class="entry-content">
+				<?php the_content(); ?>
+			</div> <!-- end entry-content -->
 
-						
-					</article>
+			
+		</article>
 
 
-				<?php endwhile; ?>
-            </div> <!-- end main-content -->
-        </div>
-    </div>
+	<?php endwhile; ?>
 </div> 
 <?php get_footer(); ?>

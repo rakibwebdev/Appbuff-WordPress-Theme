@@ -221,36 +221,37 @@ function appbuff_kses( $raw ) {
 
 // build google font url
 // ----------------------------------------------------------------------------------------
-function appbuff_google_fonts_url() {
-	$fonts_url		 = '';
-	$font_families	 = array();
-	//Body Font
-	$body_font		 = appbuff_option( 'body_font' );
-	if ( !empty( $body_font ) ) {
-		$body_families	 = isset( $body_font[ 'font-family' ] ) ? $body_font[ 'font-family' ] : '';
-		$body_variant	 = isset( $body_font[ 'variant' ] ) ? $body_font[ 'variant' ] : '';
-		$font_families[] = $body_families . ":" . $body_variant;
-	}
-	//Heading font
-	if ( !empty( $head_font ) ) {
-		$head_font		 = appbuff_option( 'heading_font' );
-		$head_families	 = isset( $head_font[ 'font-family' ] ) ? $head_font[ 'font-family' ] : '';
-		$head_variant	 = isset( $head_font[ 'variant' ] ) ? $head_font[ 'variant' ] : '';
-		$font_families[] = $head_families . ":" . $head_variant;
-	}
+// function appbuff_google_fonts_url() {
+// 	$fonts_url		 = '';
+// 	$font_families	 = array();
+// 	//Body Font
+// 	$body_font		 = appbuff_option( 'body_font' );
+// 	if ( !empty( $body_font ) ) {
+// 		$body_families	 = isset( $body_font[ 'font-family' ] ) ? $body_font[ 'font-family' ] : '';
+// 		$body_variant	 = isset( $body_font[ 'variant' ] ) ? $body_font[ 'variant' ] : '';
+// 		$font_families[] = $body_families . ":" . $body_variant;
+// 	}
+// 	//Heading font
+// 	if ( !empty( $head_font ) ) {
+// 		$head_font		 = appbuff_option( 'heading_font' );
+// 		$head_families	 = isset( $head_font[ 'font-family' ] ) ? $head_font[ 'font-family' ] : '';
+// 		$head_variant	 = isset( $head_font[ 'variant' ] ) ? $head_font[ 'variant' ] : '';
+// 		$font_families[] = $head_families . ":" . $head_variant;
+// 	}
 
-	$font_families[] = 'Karla:400,700|Rubik:300,400,500,700';
+// 	$font_families[] = 'Karla:400,700|Rubik:300,400,500,700';
+	
 
-	if ( $font_families ) {
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) )
-		);
+// 	if ( $font_families ) {
+// 		$query_args = array(
+// 			'family' => urlencode( implode( '|', $font_families ) )
+// 		);
 
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	}
+// 		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+// 	}
 
-	return esc_url_raw( $fonts_url );
-}
+// 	return esc_url_raw( $fonts_url );
+// }
 
 
 // return megamenu child item's slug
