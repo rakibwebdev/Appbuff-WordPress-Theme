@@ -908,7 +908,7 @@ a.play-video::after{
 }
 .about-agency:before{
   content:"";
-  background:url(../images/shape/dot_bg.png);
+  background:url(../img/shape/dot_bg.png);
   position:absolute;
   width:100%;
   height:100%;

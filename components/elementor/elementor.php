@@ -68,6 +68,12 @@ class APPBUFF_Shortcode{
         
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/logo-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Logo_Carousel_Style1());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/fun-fact.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_fun_fact());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/image-box-style1.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_image_box_style1());
     }
     
 	public static function APPBUFF_get_instance() {
