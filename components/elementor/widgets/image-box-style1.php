@@ -38,38 +38,52 @@ class Appbuff_image_box_style1 extends Widget_Base {
         );
         $repeater = new Repeater();
         $repeater->add_control(
-            'counter_number',
+            'box_image',
+			[
+				'label' => __( 'Choose Image', 'plugin-domain' ),
+				'type' => \Elementor\Controls_Manager::MEDIA,
+				'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+        );
+        $repeater->add_control(
+            'box_title',
             [
-                'label' => esc_html__('Counter Number', 'appbuff'),
+                'label' => esc_html__('Title', 'appbuff'),
                 'type' => Controls_Manager::TEXT,
             ]
         );
         $repeater->add_control(
-            'counter_text',
+            'box_content',
             [
-                'label' => esc_html__('Counter text', 'appbuff'),
-                'type' => Controls_Manager::TEXT,
+                'label' => esc_html__('Content', 'appbuff'),
+                'type' => Controls_Manager::TEXTAREA,
             ]
         );
 
         $this->add_control(
-            'counter',
+            'image_box',
             [
-                'label' => esc_html__('Slider', 'appbuff'),
+                'label' => esc_html__('Image box item', 'appbuff'),
                 'type' => Controls_Manager::REPEATER,
                 'separator' => 'before',
                 'default' => [
                     [
-                        'counter_number' => esc_html__('200', 'appbuff'),
-                        'counter_text' => esc_html__('Happy Clients', 'appbuff'),
+                        'box_title' => esc_html__('Reasearch and Analysis', 'appbuff'),
+                        'box_content' => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'appbuff'),
                     ],
                     [
-                        'counter_number' => esc_html__('200', 'appbuff'),
-                        'counter_text' => esc_html__('Happy Clients', 'appbuff'),
+                        'box_title' => esc_html__('Reasearch and Analysis', 'appbuff'),
+                        'box_content' => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'appbuff'),
                     ],
                     [
-                        'counter_number' => esc_html__('200', 'appbuff'),
-                        'counter_text' => esc_html__('Happy Clients', 'appbuff'),
+                        'box_title' => esc_html__('Reasearch and Analysis', 'appbuff'),
+                        'box_content' => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'appbuff'),
+                    ],
+                    [
+                        'box_title' => esc_html__('Reasearch and Analysis', 'appbuff'),
+                        'box_content' => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'appbuff'),
                     ],
                 ],
                 'fields' => $repeater->get_controls(),
@@ -87,36 +101,16 @@ class Appbuff_image_box_style1 extends Widget_Base {
 
         ?>
             <div class="row upset">
+                <?php foreach (  $settings['image_box'] as $box_item ) { ?>
                 <div class="col-lg-3 col-sm-6 mt30">
-                <div class="s-block up-hor">
-                    <div class="s-card-icon"><img src="images/icons/research.svg" alt="service" class="img-fluid"/></div>
-                    <h4>Reasearch and Analysis</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <div class="s-block up-hor">
+                        <div class="s-card-icon"><img src="<?php echo esc_url( $box_item['box_image']['url'] ) ?>" alt="service" class="img-fluid"/></div>
+                        <h4><?php echo esc_html( $box_item['box_title'] ) ?></h4>
+                        <p><?php echo esc_html( $box_item['box_content'] ) ?></p>
+                    </div>
                 </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mt30">
-                <div class="s-block up-hor">
-                    <div class="s-card-icon"><img src="images/icons/chat.svg" alt="service" class="img-fluid"/></div>
-                    <h4>Negotiation and power</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mt30">
-                <div class="s-block up-hor">
-                    <div class="s-card-icon"><img src="images/icons/monitor.svg" alt="service" class="img-fluid"/></div>
-                    <h4>Creative and innovative solutions</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mt30">
-                <div class="s-block up-hor">
-                    <div class="s-card-icon"><img src="images/icons/trasparency.svg" alt="service" class="img-fluid"/></div>
-                    <h4>Trasparency and ease of work</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                </div>
-                </div>
+                <?php } ?>
             </div>
-          </div>
         <?php
 
     }

@@ -11,6 +11,7 @@ if ( !is_admin() ) {
 	// 3rd party css
 	wp_enqueue_style('appbuff-fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;family=Poppins:wght@300;400;500;600;700;800;900&amp;display=swap', null, APPBUFFF_VERSION );
 	wp_enqueue_style( 'bootstrap', APPBUFFF_CSS . '/bootstrap.min.css', null, APPBUFFF_VERSION );
+	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css', null, APPBUFFF_VERSION );
 	wp_enqueue_style( 'plugin-style', APPBUFFF_CSS . '/plugin.min.css', null, APPBUFFF_VERSION );
 	wp_enqueue_style( 'responsive-style', APPBUFFF_CSS . '/responsive.css', null, APPBUFFF_VERSION );
 	// theme css

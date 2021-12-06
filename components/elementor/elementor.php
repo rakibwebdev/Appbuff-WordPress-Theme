@@ -65,6 +65,9 @@ class APPBUFF_Shortcode{
 
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/button-style2.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_button_style2());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/button-style3.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_button_style3());
         
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/logo-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Logo_Carousel_Style1());
@@ -74,6 +77,9 @@ class APPBUFF_Shortcode{
 
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/image-box-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_image_box_style1());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/accordion-style1.php';
+        $widgets_manager->register_widget_type(new Elementor\Accordion_style1());
     }
     
 	public static function APPBUFF_get_instance() {
