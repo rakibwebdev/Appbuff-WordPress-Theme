@@ -105,26 +105,31 @@ function appbuff_get_breadcrumbs( $seperator = '', $word = '' ) {
 // ----------------------------------------------------------------------------------------
 function appbuff_post_meta() {
 ?>
-	<div class="post-meta">
+	<div class="entry-blog">
 		<?php 
-			if ( get_post_type() === 'post' ) {
-				echo '<span class="post-meta-date">
-						<i class="fa fa-clock-o"></i> 
-						'. get_the_date() . 
-					'</span>';
-			} 
 			printf(
-				'<span class="post-author"><i class="fa fa-user"></i><a href="%2$s">%3$s</a></span>',
+				'<span class="bypost"><a href="%2$s"><i class="fa fa-user"></i>%3$s</a></span>',
 				get_avatar( get_the_author_meta( 'ID' ), 55 ), 
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), 
 				get_the_author()
 			);
-			$category_list = get_the_category_list( ', ' );
-			if ( $category_list ) {
+			if ( get_post_type() === 'post' ) {
+				echo '<span class="posted-on">
+						<i class="fa fa-clock-o"></i> 
+						'. get_the_date() . 
+					'</span>';
+			}
+			$comment_count = get_comments_number();
+			if ( $comment_count ) {
 				echo '<span class="meta-categories post-cat">
-						<i class="fa fa-folder"> </i>
-						'. $category_list .' 
+						<i class="fas fa-comment-dots"> </i>
+						'. $comment_count .' 
 					</span>';
+			}else{
+				echo '<span>
+					<i class="fas fa-comment-dots"> </i>
+					0
+				</span>';
 			}
 			
 		?>

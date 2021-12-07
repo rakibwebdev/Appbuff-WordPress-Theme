@@ -78,6 +78,12 @@ class APPBUFF_Shortcode{
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/image-box-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_image_box_style1());
 
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/service-box-style1.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_service_box_style1());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/service-box-style2.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_service_box_style2());
+
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/accordion-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Accordion_style1());
     }

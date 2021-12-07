@@ -6,8 +6,9 @@
  */
 ?>
    
-<article <?php post_class('post');?>>
-<div class="post-media">
+<article <?php post_class('post pr--100 mt-4');?>>
+<div class="isotope_item vrbloglist">
+<div class="item-image">
 	<?php 
 	switch(get_post_format()){
 		case 'video':
@@ -35,33 +36,38 @@
 		break; 
 		default:
 			if ( has_post_thumbnail() ) :
-				//fw_print(get_the_post_thumbnail_url());  // post thumbnail url
-				the_post_thumbnail(); 
+				the_post_thumbnail('full'); 
 			endif;
 		break;
 	}
 	?>
+	<span class="category-blog">
+		<?php
+			$category_list = get_the_category_list( ', ' );
+				if ( $category_list ) {
+					echo '<span class="meta-categories post-cat">
+							<i class="fa fa-folder"> </i>
+							'. $category_list .' 
+						</span>';
+				}
+		?>
+	</span>			
 	</div>
-	<div class="post-body">
-		<div class="entry-header">
+	<div class="item-info blog-info">
+		<div class="item-info blog-info">
 			<?php appbuff_post_meta(); ?>
-			<h2 class="entry-title">
+			<h4>
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				<?php if ( is_sticky() ) {
 					echo '<sup class="meta-featured-post"> <i class="fa fa-thumb-tack"></i> ' . esc_html__( 'Sticky', 'appbuff' ) . ' </sup>';
 				} ?>
-			</h2>
+			</h4>
 			
-			<div class="entry-content">
+			<p>
 				<?php appbuff_excerpt( 40, null ); ?>
-			</div>
-
-			<div class="post-footer">
-				<a class="btn btn-primary" href="<?php the_permalink(); ?>">
-					<?php esc_html_e('Read More', 'appbuff') ?>
-				</a>
-			</div>
+			</p>
 
 		</div><!-- Entry header end -->
 	</div><!-- Post body end -->
+</div>
 </article>

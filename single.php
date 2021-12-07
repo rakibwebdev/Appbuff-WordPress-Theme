@@ -4,9 +4,9 @@
  */
 
 get_header(); 
-get_template_part( 'template-parts/blog/title', 'blog' ); // calling title part from blog dir
+get_template_part( 'template-parts/banner/blog/banner', 'content' );
 ?>
-<div id="main-content" class="main-container blog-single"  role="main">
+<div id="main-content" class="main-container blog-single blog-page pad-tb"  role="main">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-12">

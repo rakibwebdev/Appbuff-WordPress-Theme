@@ -4,7 +4,7 @@
  */
 
 get_header(); 
-get_template_part( 'template-parts/blog/title', 'blog' ); // calling title part from blog dir
+get_template_part( 'template-parts/banner/blog/banner', 'content' );
 ?>
 
 <section id="main-content" class="main-container" role="main">

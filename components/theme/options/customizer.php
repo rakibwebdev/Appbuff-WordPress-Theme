@@ -7,7 +7,7 @@
 $options = [
 	'appbuff_section_theme_settings' => [
 		'title'				 => esc_html__( 'Theme settings', 'appbuff' ),
-		'options'			 => Xsprefix_Theme_Includes::_customizer_init(),
+		'options'			 => Appbuff_Theme_Includes::_customizer_init(),
 		'wp-customizer-args' => [
 			'priority' => 3,
 		],

@@ -16,9 +16,9 @@
         </a>
       </div>
 
-      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-nav" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-nav" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button> -->
+      </button>
       <?php
         wp_nav_menu([
           'menu'            => 'primary',
@@ -32,8 +32,8 @@
           'walker'          => new appbuff_navwalker()
         ]);
       ?>
-      <div>
-        <ul>
+      <div class="custom-nav">
+        <ul class="nav-list nav-right-btn">
           <!--menu right border-->
           <li class="contact-show">
             <a href="#" class="btn-round- trngl btn-br bg-btn"><i class="fas fa-phone-alt"></i></a>

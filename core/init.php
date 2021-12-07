@@ -209,8 +209,8 @@ class Appbuff_Theme_Includes {
     // include customizer options
     // ----------------------------------------------------------------------------------------
 	public static function _customizer_init() {
-		self::include_customizer_options('blog');
-		self::include_customizer_options('page');
+		// self::include_customizer_options('blog');
+		// self::include_customizer_options('page');
 		self::include_customizer_options('header');
 		
 
