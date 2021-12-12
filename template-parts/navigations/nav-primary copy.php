@@ -1,4 +1,4 @@
-<nav class="navbar xs-navbar navbar-light navbar-expand-lg bg-faded">
+<nav class="navbar appbuff-navbar navbar-light navbar-expand-lg bg-faded">
   <h1 class="site-title navbar-brand"> 
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo">
       <?php 

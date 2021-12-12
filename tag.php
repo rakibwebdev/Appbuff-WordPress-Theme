@@ -12,7 +12,7 @@ get_template_part( 'template-parts/blog/title', 'blog' ); // calling title part 
 		<div class="row">
 			<div class="col-lg-8 col-md-12">
 				<?php if ( have_posts() ) : ?>
-					<header class="xs-page-header">
+					<header class="appbuff-page-header">
                         <h2>
                             <?php printf(esc_html__('Tag archives for %s', 'appbuff'), single_tag_title('', false)); ?>
                         </h2>

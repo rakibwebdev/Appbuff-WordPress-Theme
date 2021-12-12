@@ -3,7 +3,7 @@
  * hooks for adding google fonts
  */
 
-class Xsprefix_Unyson_Google_Fonts {
+class Appbuff_Unyson_Google_Fonts {
 
 	static private $data = array(
 		'subset' => array(),
@@ -58,4 +58,4 @@ class Xsprefix_Unyson_Google_Fonts {
 	}
 
 }
-add_action( 'wp_enqueue_scripts', array( 'Xsprefix_Unyson_Google_Fonts', 'output_url' ), 9999 );
+add_action( 'wp_enqueue_scripts', array( 'Appbuff_Unyson_Google_Fonts', 'output_url' ), 9999 );

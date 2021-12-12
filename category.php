@@ -12,7 +12,7 @@ get_template_part( 'template-parts/blog/title', 'blog' ); // calling title part 
 		<div class="row">
 			<div class="col-lg-8 col-md-12">
 				<?php if ( have_posts() ) : ?>
-					<div class="xs-page-header">
+					<div class="appbuff-page-header">
                         <h2>
                             <?php printf(esc_html__('Category Archives for %s', 'appbuff'), single_cat_title('', false)); ?>
                         </h2>

@@ -163,7 +163,6 @@ class Appbuff_Theme_Includes {
 		
         // setup related files
         self::include_child_first( '/installation-fragments/tgmpa-plugins.php' );
-		self::include_child_first( '/installation-fragments/theme-demos.php' );
 		
         // menu
         self::include_child_first( '/hooks/menus.php' );

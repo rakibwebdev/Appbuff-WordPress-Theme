@@ -2,7 +2,7 @@
 /**
  * recent post widget
  */
-class Xsprefix_Recent_Post extends WP_Widget {
+class Appbuff_Recent_Post extends WP_Widget {
 
 	function __construct() {
 
@@ -11,7 +11,7 @@ class Xsprefix_Recent_Post extends WP_Widget {
 			'description'	 => esc_html__('Recent post with thumbnail','appbuff')
 		);
 
-		parent::__construct( 'xs-recent-post', esc_html__( 'Xsprefix recent post', 'appbuff' ), $widget_opt );
+		parent::__construct( 'appbuff-recent-post', esc_html__( 'Appbuff recent post', 'appbuff' ), $widget_opt );
 	}
 
 	function widget( $args, $instance ) {

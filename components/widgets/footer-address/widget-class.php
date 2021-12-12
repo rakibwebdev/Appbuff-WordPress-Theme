@@ -4,15 +4,15 @@
  * Creates widget with recent post thumbnail
  */
 
-class Xsprefix_Footer_Address extends WP_Widget
+class Appbuff_Footer_Address extends WP_Widget
 {
     function __construct() {
         $widget_opt = array(
             'classname'     => 'appbuff-footer-address',
-            'description'   => esc_html__('Xsprefix footer address','appbuff')
+            'description'   => esc_html__('Appbuff footer address','appbuff')
         );
         
-        parent::__construct('xs-footer-address', esc_html__('Xsprefix footer address', 'appbuff'), $widget_opt);
+        parent::__construct('appbuff-footer-address', esc_html__('Appbuff footer address', 'appbuff'), $widget_opt);
     }
     
     function widget( $args, $instance ){
@@ -60,7 +60,7 @@ class Xsprefix_Footer_Address extends WP_Widget
         }
         
         ?>
-        <div class="media xs-footer-info-and-payment">
+        <div class="media appbuff-footer-info-and-payment">
 
             <?php if($media_icon != ''): ?>
                 <span class="<?php echo esc_html($media_icon); ?> d-flex"></span>
@@ -83,7 +83,7 @@ class Xsprefix_Footer_Address extends WP_Widget
                     </address>
                 <?php endif; ?>
                 <?php if($map_btn != ''): ?>
-                    <a href="https://maps.google.com/maps?<?php echo appbuff_return($query_string);?>" class="xs-map-popup btn btn-primary">
+                    <a href="https://maps.google.com/maps?<?php echo appbuff_return($query_string);?>" class="appbuff-map-popup btn btn-primary">
                         <?php if($map_icon != ''): ?>
                             <i class="<?php echo esc_html($map_icon); ?>"></i>
                         <?php endif; ?>
