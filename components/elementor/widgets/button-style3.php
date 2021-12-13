@@ -56,6 +56,33 @@ class Appbuff_button_style3 extends Widget_Base {
                 'default' => 'Get A Quotation',
             ]
         );
+        $this->add_responsive_control(
+			'align',
+			[
+				'label' => esc_html__( 'Alignment', 'elementor' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left'    => [
+						'title' => esc_html__( 'Left', 'elementor' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'elementor' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'elementor' ),
+						'icon' => 'eicon-text-align-right',
+					],
+					'justify' => [
+						'title' => esc_html__( 'Justified', 'elementor' ),
+						'icon' => 'eicon-text-align-justify',
+					],
+				],
+				'prefix_class' => 'elementor%s-align-',
+				'default' => '',
+			]
+		);
         
         
         
@@ -67,7 +94,7 @@ class Appbuff_button_style3 extends Widget_Base {
         $text = $settings['action_url_text'];
         $link = $settings['action_url']['url'];
         ?>
-        <a href="<?php echo esc_html($link) ?>" class="btn-main bg-btn2 lnk mt30"> <?php echo esc_html( $text ) ?><i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
+        <a href="<?php echo esc_html($link) ?>" class="btn-main bg-btn2 lnk"> <?php echo esc_html( $text ) ?><i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
         <?php
 
     }

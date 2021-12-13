@@ -72,11 +72,29 @@ class APPBUFF_Shortcode{
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/logo-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Logo_Carousel_Style1());
 
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/logo-style2.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_client_logoset());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/logo-style3.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_badges());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/icon-list-style1.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_icon_list_style1());
+
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/fun-fact.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_fun_fact());
 
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/testimonial-slider-style1.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_testimonial_style1());
+
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/image-box-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_image_box_style1());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/image-box-style2.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_image_box_style2());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/image-box-style3.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_image_box_style3());
 
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/service-box-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_service_box_style1());
@@ -86,6 +104,9 @@ class APPBUFF_Shortcode{
 
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/accordion-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Accordion_style1());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/social-icons.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_social_icons());
     }
     
 	public static function APPBUFF_get_instance() {
