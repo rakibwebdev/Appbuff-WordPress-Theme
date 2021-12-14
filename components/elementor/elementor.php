@@ -81,6 +81,9 @@ class APPBUFF_Shortcode{
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/icon-list-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_icon_list_style1());
 
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/icon-list-style2.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_icon_list_style2());
+
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/fun-fact.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_fun_fact());
 
@@ -107,6 +110,9 @@ class APPBUFF_Shortcode{
 
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/social-icons.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_social_icons());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/portfolio-tab.php';
+        $widgets_manager->register_widget_type(new Elementor\Portfolio_Tab());
     }
     
 	public static function APPBUFF_get_instance() {

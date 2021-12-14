@@ -42,28 +42,28 @@ class Appbuff_Recent_Post extends WP_Widget {
 
 		$loop = new WP_Query( $query );
 		?>
-		<div class="widget-posts">
+		<div class="recent-post widgets mt40">
 			<?php
 			if ( $loop->have_posts() ):
 				while ( $loop->have_posts() ):
 					$loop->the_post();
 					?>
-					<div class="widget-post media">
-						<?php
-							$thumbnail	 = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), '' );
-							$img  = fw_resize( $thumbnail[ 0 ], 70, 70,true );
-							echo '<a href="'.get_the_permalink().'"><img src="' . esc_url( $img ) . '" alt="' . esc_attr__('thumb','appbuff') . '"></a>';
+					<div class="media">
+						<div class="post-image bdr-radius">
+							<?php
+								$thumbnail	 = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), '' );
+								$img  = fw_resize( $thumbnail[ 0 ], 70, 70,true );
+								echo '<a href="'.get_the_permalink().'"><img src="' . esc_url( $img ) . '" alt="' . esc_attr__('thumb','appbuff') . '"></a>';
 							?>
-						<div class="media-body">
-							<span class="post-meta-date"> 
-								<?php echo get_the_time( 'd M, Y' ); ?>
-							</span>
+						</div>
+						<div class="media-body post-info">
 							<h5 class="entry-title">
 								<a href="<?php echo get_the_permalink(); ?>" ><?php echo get_the_title();?></a>
 							</h5>
-							<span class="post-author">
-								<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>"><?php echo get_the_author(); ?></a>
+							<span class="post-meta-date"> 
+								<?php echo get_the_time( 'd M, Y' ); ?>
 							</span>
+	
 						</div>
 					</div>
 

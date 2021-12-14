@@ -30,8 +30,6 @@ define('APPBUFFF_JS_DIR', APPBUFFF_THEME_DIR . '/assets/js');
 define('APPBUFFF_CORE', APPBUFFF_THEME_DIR . '/core');
 define('APPBUFFF_COMPONENTS', APPBUFFF_THEME_DIR . '/components');
 define('APPBUFFF_EDITOR', APPBUFFF_COMPONENTS . '/editor');
-define('APPBUFFF_INSTALLATION', APPBUFFF_CORE . '/installation-fragments');
-define('APPBUFFF_REMOTE_CONTENT', esc_url('http://xpeedstudio.net/demo-content/appbuff'));
 
 
 // set up the content width value based on the theme's design
@@ -119,3 +117,54 @@ function appbuff_remove_unused_css_files() {
     wp_dequeue_style( 'elementor-global' );
     wp_deregister_style( 'elementor-global' );
 }
+
+
+//portfolio post type
+function appbuff_portfolio() {
+    $labels = array(
+        'name'                  => _x( 'Portfolios', 'Post type general name', 'portfolio' ),
+        'singular_name'         => _x( 'Portfolio', 'Post type singular name', 'portfolio' ),
+        'menu_name'             => _x( 'Portfolios', 'Admin Menu text', 'portfolio' ),
+        'name_admin_bar'        => _x( 'Portfolio', 'Add New on Toolbar', 'portfolio' ),
+        'add_new'               => __( 'Add New', 'portfolio' ),
+        'add_new_item'          => __( 'Add New portfolio', 'portfolio' ),
+        'new_item'              => __( 'New portfolio', 'portfolio' ),
+        'edit_item'             => __( 'Edit portfolio', 'portfolio' ),
+        'view_item'             => __( 'View portfolio', 'portfolio' ),
+        'all_items'             => __( 'All portfolios', 'portfolio' ),
+        'search_items'          => __( 'Search portfolios', 'portfolio' ),
+        'parent_item_colon'     => __( 'Parent portfolios:', 'portfolio' ),
+        'not_found'             => __( 'No portfolios found.', 'portfolio' ),
+        'not_found_in_trash'    => __( 'No portfolios found in Trash.', 'portfolio' ),
+        'featured_image'        => _x( 'Portfolio Cover Image', 'portfolio' ),
+        'set_featured_image'    => _x( 'Set cover image', 'portfolio' ),
+        'remove_featured_image' => _x( 'Remove cover image', 'portfolio' ),
+        'use_featured_image'    => _x( 'Use as cover image', 'portfolio' ),
+        'archives'              => _x( 'Portfolio archives', 'portfolio' ),
+        'insert_into_item'      => _x( 'Insert into portfolio', 'portfolio' ),
+        'uploaded_to_this_item' => _x( 'Uploaded to this portfolio', 'portfolio' ),
+        'filter_items_list'     => _x( 'Filter portfolios list', 'portfolio' ),
+        'items_list_navigation' => _x( 'Portfolios list navigation', 'portfolio' ),
+        'items_list'            => _x( 'Portfolios list', 'portfolio' ),
+    );     
+    $args = array(
+        'labels'             => $labels,
+        'description'        => 'Portfolio custom post type.',
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'portfolio' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'supports'           => array( 'title', 'editor', 'author', 'thumbnail' ),
+        'taxonomies'         => array( 'category'),
+        'show_in_rest'       => true
+    );
+      
+    register_post_type( 'Portfolio', $args );
+}
+add_action( 'init', 'appbuff_portfolio' );
