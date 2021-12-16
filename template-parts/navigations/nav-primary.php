@@ -16,9 +16,9 @@
         </a>
       </div>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-nav" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-nav" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> -->
       <?php
         wp_nav_menu([
           'menu'            => 'primary',
@@ -32,6 +32,12 @@
           'walker'          => new appbuff_navwalker()
         ]);
       ?>
+      <div class="mobile-menu2">
+        <ul class="mob-nav2">
+          <li><a href="#" class="btn-round- trngl btn-br bg-btn btshad-b1"  data-toggle="modal" data-target="#menu-popup"><i class="fas fa-envelope-open-text"></i></a></li>
+          <li class="navm-"> <a class="toggle" href="#"><span></span></a></li>
+        </ul>
+      </div>
       <div class="custom-nav">
         <ul class="nav-list nav-right-btn">
           <!--menu right border-->
@@ -43,7 +49,7 @@
               <div class="inquiry-card-nn hrbg">
               <div class="title-inq-c">FOR HR DEPARTMENT</div>
               <ul>
-                  <li class="mb0"><img src="images/flags/us.svg" alt="us office" class="flags-size"> <a href="https://wa.me/+8801713138255" >+880 1713 138 255</a></li>
+                  <li class="mb0"><img src="<?php echo esc_url( appbuff_src('logo') ) ?>" alt="us office" class="flags-size"> <a href="https://wa.me/+8801713138255" >+880 1713 138 255</a></li>
               </ul>
               </div>
               <div class="inquiry-card-nn">

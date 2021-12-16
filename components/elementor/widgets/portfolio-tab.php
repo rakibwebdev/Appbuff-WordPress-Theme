@@ -72,19 +72,10 @@ class Portfolio_Tab extends Widget_Base {
                     <li data-filter="*" class="is-checked">All</li>
         
                     <?php
-                        $args = array(
-                            'post_type' => 'Portfolio',
-                            'post_status' => 'publish',
-                            // 'tax_query' => array(
-                            //     array(
-                            //         'taxonomy' => 'people',
-                            //         'field'    => 'slug',
-                            //         'terms'    => 'bob',
-                            //     ),
-                            // ),
-                        );
-                        $query = new \WP_Query( $args );
-                        $cats = get_categories($query);
+                        $cats = get_terms( array(
+                            'taxonomy' => 'portfolio_cat',
+                            'hide_empty' => false,
+                        ) );
 
                         foreach($cats as $cat) { ?>
                             <li data-filter=".<?php echo $cat->name; ?>"><?php echo $cat->name; ?></li>
@@ -107,10 +98,10 @@ class Portfolio_Tab extends Widget_Base {
                             if ( $query->have_posts() ) {
                                 while ( $query->have_posts() ) {
                                     $query->the_post(); ?>
-                                    <div class="col-lg-12 col-sm-12 single-card-item <?php the_category(); ?>">
+                                    <div class="col-lg-12 col-sm-12 single-card-item <?php //get_the_terms(); ?>">
                                         <div class="portfolio-block bg-gradient8">
                                             <div class="portfolio-item-info">
-                                            <span><?php the_category(); ?></span>
+                                            <span><?php //get_the_terms(); ?></span>
                                             <h3 class="mt30 mb30"><a href="#"><?php the_title(); ?></a></h3>
                                             <div class="reviews-card pr-shadow">
                                                 <div class="review-text">

@@ -8,19 +8,21 @@
 
 <?php get_header(); ?>
 
-<div class="home-page"  role="main">
-	<?php while ( have_posts() ) : the_post(); ?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<body>
+	<div class="home-page"  role="main">
+		<?php while ( have_posts() ) : the_post(); ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<!-- Article content -->
-			<div class="entry-content">
-				<?php the_content(); ?>
-			</div> <!-- end entry-content -->
+				<!-- Article content -->
+				<div class="entry-content">
+					<?php the_content(); ?>
+				</div> <!-- end entry-content -->
 
-			
-		</article>
+				
+			</article>
 
 
-	<?php endwhile; ?>
-</div> 
+		<?php endwhile; ?>
+	</div>
+</body> 
 <?php get_footer(); ?>

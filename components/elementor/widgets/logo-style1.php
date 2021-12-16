@@ -81,7 +81,7 @@ class Logo_Carousel_Style1 extends Widget_Base {
     protected function render( ) {
         $settings = $this->get_settings();
         ?>
-        <div class="bages-slider owl-carousel mt20">
+        <div class="bages-slider owl-carousel mt20" style="overflow:hidden">
             <?php
             foreach (  $settings['logo'] as $logo ) {
                 ?>

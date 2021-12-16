@@ -105,6 +105,9 @@ class APPBUFF_Shortcode{
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/service-box-style2.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_service_box_style2());
 
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/service-box-style3.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_service_box_style3());
+
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/accordion-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Accordion_style1());
 
@@ -113,6 +116,9 @@ class APPBUFF_Shortcode{
 
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/portfolio-tab.php';
         $widgets_manager->register_widget_type(new Elementor\Portfolio_Tab());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/portfolio-list.php';
+        $widgets_manager->register_widget_type(new Elementor\Portfolio_List());
     }
     
 	public static function APPBUFF_get_instance() {

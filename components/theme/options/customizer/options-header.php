@@ -12,6 +12,15 @@ class Header{
                     'type'	 => 'upload',
                     'image_only' => true,
                  ],
+                 'hr_img' => [
+                    'label'	 => esc_html__( 'HR Image', 'appbuff' ),
+                    'type'	 => 'upload',
+                    'image_only' => true,
+                 ],
+                 'hr_number' => [
+                    'label'	 => esc_html__( 'HR Number', 'appbuff' ),
+                    'type'	 => 'text',
+                ],
             ],
         ];
     }

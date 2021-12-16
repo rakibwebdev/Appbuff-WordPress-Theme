@@ -161,10 +161,49 @@ function appbuff_portfolio() {
         'hierarchical'       => false,
         'menu_position'      => 20,
         'supports'           => array( 'title', 'editor', 'author', 'thumbnail' ),
-        'taxonomies'         => array( 'category'),
         'show_in_rest'       => true
     );
       
     register_post_type( 'Portfolio', $args );
 }
 add_action( 'init', 'appbuff_portfolio' );
+
+// Register Custom Taxonomy
+function portfolio_taxonomy() {
+
+	$labels = array(
+		'name'                       => _x( 'Categories', 'Taxonomy General Name', 'appbuff' ),
+		'singular_name'              => _x( 'Category', 'Taxonomy Singular Name', 'appbuff' ),
+		'menu_name'                  => __( 'Category', 'appbuff' ),
+		'all_items'                  => __( 'All Items', 'appbuff' ),
+		'parent_item'                => __( 'Parent Item', 'appbuff' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'appbuff' ),
+		'new_item_name'              => __( 'New Item Name', 'appbuff' ),
+		'add_new_item'               => __( 'Add New Item', 'appbuff' ),
+		'edit_item'                  => __( 'Edit Item', 'appbuff' ),
+		'update_item'                => __( 'Update Item', 'appbuff' ),
+		'view_item'                  => __( 'View Item', 'appbuff' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'appbuff' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'appbuff' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'appbuff' ),
+		'popular_items'              => __( 'Popular Items', 'appbuff' ),
+		'search_items'               => __( 'Search Items', 'appbuff' ),
+		'not_found'                  => __( 'Not Found', 'appbuff' ),
+		'no_terms'                   => __( 'No items', 'appbuff' ),
+		'items_list'                 => __( 'Items list', 'appbuff' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'appbuff' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+        'show_in_rest'               => true
+	);
+	register_taxonomy( 'portfolio_cat', array( 'portfolio' ), $args );
+
+}
+add_action( 'init', 'portfolio_taxonomy', 0 );

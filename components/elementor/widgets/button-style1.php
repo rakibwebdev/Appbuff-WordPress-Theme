@@ -95,7 +95,7 @@ class Appbuff_button_style1 extends Widget_Base {
         $link = $settings['action_url']['url'];
 
         ?>
-        <div class="content-sec  d-flex mt30 v-center text-w wow fadeIn" data-wow-delay="0.6s">
+        <div class="content-sec mt30 v-center text-w wow fadeIn" data-wow-delay="0.6s">
             <div class="mr25"><a href="<?php echo $link ?>" class="btn-main bg-btn4 lnk"><?php echo $text ?><i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a></div>
         </div>
         <?php
