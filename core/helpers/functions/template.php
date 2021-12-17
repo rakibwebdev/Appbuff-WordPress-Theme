@@ -14,22 +14,27 @@ function appbuff_post_nav() {
 	}
 ?>
 	<nav class="post-navigation clearfix">
-		<div class="post-previous">
-			<?php if ( !empty( $pre_post ) ): ?>
-				<a href="<?php echo get_the_permalink( $pre_post->ID ); ?>">
-					<h3><?php echo get_the_title( $pre_post->ID ) ?></h3>
-					<span><i class="fa fa-long-arrow-left"></i><?php esc_html_e( 'Previous post', 'appbuff' ) ?></span>
-				</a>
-			<?php endif; ?>
-		</div>
-		<div class="post-next">
-			<?php if ( !empty( $next_post ) ): ?>
-				<a href="<?php echo get_the_permalink( $next_post->ID ); ?>">
-					<h3><?php echo get_the_title( $next_post->ID ) ?></h3>
-
-					<span><?php esc_html_e( 'Next post', 'appbuff' ) ?> <i class="fa fa-long-arrow-right"></i></span>
-				</a>
-			<?php endif; ?>
+		<div class="row">
+			<div class="col-lg-6 col-md-6 mt30 mb30">
+				<div class="post-navigation text-left">
+					<?php if ( !empty( $pre_post ) ): ?>
+						<a href="<?php echo get_the_permalink( $pre_post->ID ); ?>">
+							<span><?php esc_html_e( 'Previous post', 'appbuff' ) ?></span>
+							<h4><?php echo get_the_title( $pre_post->ID ) ?></h4>
+						</a>
+					<?php endif; ?>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 mt30 mb30">
+				<div class="post-navigation text-left text-md-right">
+					<?php if ( !empty( $next_post ) ): ?>
+						<a href="<?php echo get_the_permalink( $next_post->ID ); ?>">
+							<span><?php esc_html_e( 'Next post', 'appbuff' ) ?></span>
+							<h4><?php echo get_the_title( $next_post->ID ) ?></h4>
+						</a>
+					<?php endif; ?>
+				</div>
+			</div>
 		</div>
 	</nav>
 <?php }
@@ -231,30 +236,23 @@ function appbuff_paging_nav() {
 function appbuff_post_share() {
 	$show_share = appbuff_option('blog_social_share', 'yes');
 	if($show_share == 'yes'): ?>
-		<div class="post-social-share-container">
-			<ul class="social-list version-2">
-				<li class="title"><?php esc_html_e('Share :','appbuff');?></li>
-
-				<li><a class="facebook" 
+		<div class="blog-share-icon text-left text-md-right">
+			<span><?php esc_html_e('Share :','appbuff');?></span>
+			<a class="facebook" 
 					href="<?php esc_url( 'https://www.facebook.com/share.php?u=' . the_permalink());?>"
-					><i class="fa fa-facebook"></i></a></li>
-
-				<li><a class="twitter" 
+					><i class="fa fa-facebook"></i></a>
+			<a class="twitter" 
 					href="<?php esc_url( 'http://twitter.com/intent/tweet?status=' . the_title() . '+' . the_permalink());?>"
-					><i class="fa fa-twitter"></i></a></li>
-
-				<li><a class="linkedin" 
+					><i class="fa fa-twitter"></i></a>
+			<a class="linkedin" 
 					href="<?php esc_url('http://www.linkedin.com/shareArticle?mini=true&url=' . the_permalink() . '&title=' . the_title() . '&source=' . home_url('/'));?>"
 					><i class="fa fa-linkedin"></i></a></li>
-
-				<li><a class="vimeo" 
+			<a class="vimeo" 
 					href="<?php esc_url( 'http://pinterest.com/pin/create/bookmarklet/?url=' . the_permalink() . '&is_video=false&description=' . the_title());?>"
-					><i class="fa fa-pinterest-p"></i></a></li>
-
-				<li><a class="googlePlus" 
+					><i class="fa fa-pinterest-p"></i></a>
+			<a class="googlePlus" 
 					href="<?php esc_url('https://plus.google.com/share?url=' . the_permalink());?>"
-					><i class="fa fa-google-plus"></i></a></li>
-			</ul>
+					><i class="fa fa-google-plus"></i></a>
 		</div>
 	<?php endif;
 }
@@ -266,8 +264,8 @@ function appbuff_post_tags() {
 	if ( $tag_list ) {
 		echo '<div class="post-tag-container">';
 	
-			echo '<div class="tag-lists">';
-			echo '<span>' . esc_html__( 'Tags: ', 'appbuff' ) . '</span>';
+			echo '<div class="blog-post-tag">';
+			echo '<span>' . esc_html__( 'Posted Under', 'appbuff' ) . '</span>';
 				echo appbuff_kses( $tag_list );
 			echo '</div>';
 		echo '</div>';
@@ -286,52 +284,41 @@ function appbuff_comment_style( $comment, $args, $depth ) {
 		$add_below	 = 'div-comment';
 	}
 	?>
-	<?php
-	if ( $args[ 'avatar_size' ] != 0 ) {
-		echo get_avatar( $comment, $args[ 'avatar_size' ], '', '', array( 'class' => 'comment-avatar pull-left' ) );
-	}
-	?>
+	<div class="user-image">
+		<?php
+		if ( $args[ 'avatar_size' ] != 0 ) {
+			echo get_avatar( $comment, $args[ 'avatar_size' ], '', '', array( 'class' => 'comment-avatar pull-left' ) );
+		}
+		?>
+	</div>
+	
 	<<?php
 	echo appbuff_kses( $tag );
 	comment_class( empty( $args[ 'has_children' ] ) ? '' : 'parent'  );
 	?> id="comment-<?php comment_ID() ?>"><?php if ( 'div' != $args[ 'style' ] ) { ?>
-		<div id="div-comment-<?php comment_ID() ?>" class="comment-body"><?php }
+		<div id="div-comment-<?php comment_ID() ?>" class="media-body user-info"><?php }
 	?>	
-		<div class="meta-data">
-
-			<div class="pull-right reply"><?php
-				comment_reply_link(
-				array_merge(
-				$args, array(
-					'add_below'	 => $add_below,
-					'depth'		 => $depth,
-					'max_depth'	 => $args[ 'max_depth' ]
-				) ) );
+		<h5 class="mb10"><?php
+				echo get_comment_author(). '<small>says</small>'; 
+	
 				?>
-			</div>
-
-
-			<span class="comment-author vcard"><?php
-				printf( appbuff_kses( '<cite class="fn">%s</cite> <span class="says">%s</span>', 'appbuff' ), get_comment_author_link(), esc_html__( 'says:', 'appbuff' ) );
-				?>
-			</span>
+				
+				<span class="pull-right"><?php
+					comment_reply_link(
+					array_merge(
+					$args, array(
+						'add_below'	 => $add_below,
+						'depth'		 => $depth,
+						'max_depth'	 => $args[ 'max_depth' ]
+					) ) );
+					?>
+				</span>
+				<span><?php echo get_comment_date();?></span>
+			</h5>
 			<?php if ( $comment->comment_approved == '0' ) { ?>
 				<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'appbuff' ); ?></em><br/><?php }
-			?>
-
-			<div class="comment-meta commentmetadata comment-date">
-				<?php
-				// translators: 1: date, 2: time
-				printf(
-				esc_html__( '%1$s at %2$s', 'appbuff' ), get_comment_date(), get_comment_time()
-				);
-				?>
-				<?php edit_comment_link( esc_html__( '(Edit)', 'appbuff' ), '  ', '' ); ?>
-			</div>
-		</div>	
-		<div class="comment-content">
+			?>	
 			<?php comment_text(); ?>
-		</div>
 		<?php if ( 'div' != $args[ 'style' ] ) : ?>
 		</div><?php
 	endif;

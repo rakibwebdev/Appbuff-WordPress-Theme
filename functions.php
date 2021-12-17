@@ -207,3 +207,4 @@ function portfolio_taxonomy() {
 
 }
 add_action( 'init', 'portfolio_taxonomy', 0 );
+

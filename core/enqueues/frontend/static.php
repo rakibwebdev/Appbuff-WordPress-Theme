@@ -27,7 +27,7 @@ if ( !is_admin() ) {
 	wp_enqueue_script( 'bootstrap', APPBUFFF_JS . '/bootstrap.bundle.min.js', array( 'jquery' ), APPBUFFF_VERSION, true );
 	//wp_enqueue_script( 'appbuff-form', APPBUFFF_JS . '/form.js', array( 'jquery' ), APPBUFFF_VERSION, true );
 	//wp_enqueue_script( 'appbuff-cookie', APPBUFFF_JS . '/jquery.ihavecookies.js', array( 'jquery' ), APPBUFFF_VERSION, true );
-	wp_enqueue_script( 'owl-carousel', APPBUFFF_JS . '/form.js', array( 'jquery' ), APPBUFFF_VERSION, true );
+	//wp_enqueue_script( 'owl-carousel', APPBUFFF_JS . '/form.js', array( 'jquery' ), APPBUFFF_VERSION, true );
 
 	// theme scripts
 	wp_enqueue_script( 'appbuff-plugins', APPBUFFF_JS . '/plugin.min.js', array( 'jquery' ), APPBUFFF_VERSION, true );

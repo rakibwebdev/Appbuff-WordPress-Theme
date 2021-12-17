@@ -15,15 +15,15 @@ if ( post_password_required() ) {
 ?>
 
 <?php if ( have_comments() || comments_open()) : ?>
-<div id="comments" class="blog-post-comment">
+<div id="comments" class="comments-block mt60">
 
 	<?php if ( have_comments()) : ?>
 
-        <h4 class="comment-title">
+        <h2 class="mb60">
 			<?php
-				printf( '%1$s ' . esc_html__( 'Comments ', 'appbuff' ), get_comments_number() );
+				printf( esc_html__( 'Comments:', 'appbuff' ));
 			?>
-		</h4>
+		</h2>
 
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
@@ -42,19 +42,19 @@ if ( post_password_required() ) {
 			</nav><!-- #comment-nav-above -->
 		<?php endif; //check for comment navigation ?>
 
-		<ul class="comments-list">
+		<div class="media">
 			<?php
 			wp_list_comments( array(
-			        'reply_text'        => '<i class="fa fa-mail-reply-all"></i> Reply',
+			        'reply_text'        => '<i class="fa fa-mail-reply-all"></i>',
 				    'callback'          => 'appbuff_comment_style',
-				    'style'			 => 'ul',
+				    'style'			 => 'ul ',
 				    'short_ping'	 => false,
 				    'type'              => 'all',
                     'format'            => current_theme_supports( 'html5', 'comment-list' ) ? 'html5' : 'xhtml',
 				    'avatar_size'	 => 60,
 			) );
 			?>
-		</ul><!-- .comment-list -->
+		</div><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<nav id="comment-nav-bellow" class="navigation comment-navigation" role="navigation">
@@ -94,9 +94,9 @@ if ( post_password_required() ) {
 	$aria_req	 = ( $req ? " aria-required='true'" : '' );
 
 	$fields = array(
-		'author' => '<div class="comment-info row"><div class="col-md-6"><input placeholder="'.  esc_attr__('Enter Name', 'appbuff').'" id="author" class="form-control" name="author" type="text" value="' . esc_attr( $commenter[ 'comment_author' ] ) . '" size="30"' . $aria_req . ' /></div><div class="col-md-6">',
-		'email'	 => '<input Placeholder="'.  esc_attr__('Enter Email', 'appbuff').'" id="email" name="email" class="form-control" type="email" value="' . esc_attr( $commenter[ 'comment_author_email' ] ) . '" size="30"' . $aria_req . ' /></div>',
-		'url'	 => '<div class="col-md-12"><input Placeholder="'.  esc_attr__('Enter Website', 'appbuff').'" id="url" name="url" class="form-control" type="url" value="' . esc_attr( $commenter[ 'comment_author_url' ] ) . '" size="30" /></div></div>',
+		'author' => '<div class="fieldsets row"><div class="col-md-6"><input placeholder="'.  esc_attr__('Enter Name', 'appbuff').'" id="author" name="author" type="text" value="' . esc_attr( $commenter[ 'comment_author' ] ) . '" size="30"' . $aria_req . ' /></div><div class="col-md-6">',
+		'email'	 => '<input Placeholder="'.  esc_attr__('Enter Email', 'appbuff').'" id="email" name="email" type="email" value="' . esc_attr( $commenter[ 'comment_author_email' ] ) . '" size="30"' . $aria_req . ' /></div>',
+		'url'	 => '<div class="col-md-12"><input Placeholder="'.  esc_attr__('Enter Website', 'appbuff').'" id="url" name="url" type="url" value="' . esc_attr( $commenter[ 'comment_author_url' ] ) . '" size="30" /></div></div>',
 	);
 
 	if ( is_user_logged_in() ) {
@@ -107,10 +107,9 @@ if ( post_password_required() ) {
 	$defaults = [
 		'fields'			 => $fields,
 		'comment_field'		 => '
-			<div class="row">
+			<div class="fieldsets row">
 				<div class="col-md-12 ' . $cl . '">
 					<textarea 
-						class="form-control" 
 						Placeholder="'.  esc_attr__('Enter Comments', 'appbuff').'" 
 						id="comment" 
 						name="comment" 
@@ -140,8 +139,8 @@ if ( post_password_required() ) {
 			</p>',
 		'id_form'			 => 'commentform',
 		'id_submit'			 => 'submit',
-		'class_submit'		 => 'btn-comments btn btn-primary',
-		'title_reply'		 => esc_html__( 'Leave a Reply', 'appbuff' ),
+		'class_submit'		 => 'btn-main bg-btn lnk mt10',
+		'title_reply'		 => esc_html__( '', 'appbuff' ),
 		'title_reply_to'	 => esc_html__( 'Leave a Reply to %s', 'appbuff' ),
 		'cancel_reply_link'	 => esc_html__( 'Cancel reply', 'appbuff' ),
 		'label_submit'		 => esc_html__( 'Post Comment', 'appbuff' ),

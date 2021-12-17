@@ -59,6 +59,8 @@ class APPBUFF_Shortcode{
     }
 
     public function APPBUFF_shortcode_elements($widgets_manager){
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/header-cta.php';
+        $widgets_manager->register_widget_type(new Elementor\Header_Cta());
 
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/button-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_button_style1());

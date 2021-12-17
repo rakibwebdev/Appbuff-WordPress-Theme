@@ -48,9 +48,9 @@
               <div class="contct-heading">Avilable on WhatsApp</div>
               <div class="inquiry-card-nn hrbg">
               <div class="title-inq-c">FOR HR DEPARTMENT</div>
-              <ul>
-                  <li class="mb0"><img src="<?php echo esc_url( appbuff_src('logo') ) ?>" alt="us office" class="flags-size"> <a href="https://wa.me/+8801713138255" >+880 1713 138 255</a></li>
-              </ul>
+                <ul>
+                  <li class="mb0"><img src="<?php echo esc_url( appbuff_src('hr_img') ) ?>" alt="us office" class="flags-size"> <a href="https://wa.me/+8801713138255" ><?php echo appbuff_option('hr_number') ?></a></li>
+                </ul>
               </div>
               <div class="inquiry-card-nn">
               <div class="title-inq-c">FOR SALES DEPARTMENT</div>

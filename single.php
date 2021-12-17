@@ -19,17 +19,18 @@ get_template_part( 'template-parts/banner/blog/banner', 'content' );
 						</div> <!-- .entry-content -->
 
 						<footer class="entry-footer clearfix">
-							<?php 
-								// post tags
-								// location:helpers/functions/template.php
-								appbuff_post_tags();
-							?>
-
-							<?php 
-								// post share buttons
-								// location:helpers/functions/template.php
-								appbuff_post_share();
-							?>
+							<div class="row">
+								<div class="col-lg-8 col-md-8 mt30 mb30">
+								<?php 
+									appbuff_post_tags();
+								?>
+								</div>
+								<div class="col-lg-4 col-md-4 mt30 mb30">
+								<?php 
+									appbuff_post_share();
+								?>
+								</div>
+							</div>
 
 							<?php
 							if ( is_user_logged_in() ) {
@@ -45,8 +46,6 @@ get_template_part( 'template-parts/banner/blog/banner', 'content' );
 						</footer> <!-- .entry-footer -->
 
 						<?php 
-							// post navigation, to next post or prev post
-							// location:helpers/functions/template.php
 							appbuff_post_nav(); 
 						?>
 					</article>

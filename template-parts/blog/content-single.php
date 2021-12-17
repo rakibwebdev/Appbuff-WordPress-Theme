@@ -25,7 +25,7 @@
 	<?php if ( has_post_thumbnail() && !post_password_required() ) : ?>
 		<div class="image-set">
 			<?php 
-			the_post_thumbnail( 'post-thumbnails' );
+			the_post_thumbnail( 'full' );
 			?>
 		</div>
 	<?php endif; ?>
