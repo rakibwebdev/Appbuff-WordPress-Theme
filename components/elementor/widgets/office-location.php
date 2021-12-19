@@ -11,7 +11,7 @@ class Office_Location extends Widget_Base {
   public $base;
 
     public function get_name() {
-        return 'appbuff-image-box-style3';
+        return 'appbuff-office-location';
     }
 
     public function get_title() {
