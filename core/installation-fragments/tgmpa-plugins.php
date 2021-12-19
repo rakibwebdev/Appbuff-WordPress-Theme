@@ -14,7 +14,15 @@ function _action_appbuff_register_required_plugins() {
 			'name'		 => esc_html__( 'Elementor', 'appbuff' ),
 			'slug'		 => 'elementor',
 			'required'	 => true,
-		),		
+		),
+		array(
+            'name'		 => esc_html__( 'Elementskit ', 'seocify' ),
+            'slug'		 => 'elementskit-lite',
+        ),
+		array(
+            'name'		 => esc_html__( 'Metform', 'seocify' ),
+            'slug'		 => 'metform',
+        ),				
 	);
 
 

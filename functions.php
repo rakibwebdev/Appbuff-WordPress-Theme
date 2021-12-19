@@ -8,7 +8,7 @@
 // shorthand contants
 // ------------------------------------------------------------------------
 define('APPBUFFF_THEME', 'Appbuff Theme');
-define('APPBUFFF_VERSION', time());
+define('APPBUFFF_VERSION', '1.0.1');
 define('APPBUFFF_MINWP_VERSION', '4.3');
 
 

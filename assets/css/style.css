@@ -4990,7 +4990,7 @@ table.border {
 }
 .single-blog- img {
   height: 70px;
-  width: 70px;
+  width: 120px;
   display: block;
   border-radius: 8px;
 }
@@ -6393,15 +6393,7 @@ body.hc-nav-open {
   right: 0;
 }
 /* custom css */
-.footer_blog_post .media {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: start;
-  align-items: center;
-}
-.footer_blog_post .recent-post{
-margin-top: -40px;
-}
+
 .main-header.sticky .elementskit-navbar-nav > li > a{
 color: #050748 !important;
 }

@@ -62,6 +62,9 @@ class APPBUFF_Shortcode{
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/header-cta.php';
         $widgets_manager->register_widget_type(new Elementor\Header_Cta());
 
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/blog-post.php';
+        $widgets_manager->register_widget_type(new Elementor\Blog_post());
+
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/button-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_button_style1());
 
@@ -100,6 +103,9 @@ class APPBUFF_Shortcode{
 
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/image-box-style3.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_image_box_style3());
+
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/office-location.php';
+        $widgets_manager->register_widget_type(new Elementor\Office_Location());
 
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/service-box-style1.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_service_box_style1());
