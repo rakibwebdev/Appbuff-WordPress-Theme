@@ -61,7 +61,7 @@ class Portfolio_List extends Widget_Base {
             'post_per_page' => 6,
         ]; 
         $query = new \WP_Query($args);
-        
+
         ?>
         <div class="row">
             <?php
@@ -74,12 +74,16 @@ class Portfolio_List extends Widget_Base {
                         <a href="#"><?php the_post_thumbnail('full') ?></a>
                     </div>
                     <div class="item-info-div shdo">
-                        <h4><a href="#"><?php the_title(); ?></a></h4>
-                        <p>
-                            <?php 
-                            the_category( ','); 
+                        <h4><a href="#"><?php
+                        echo mb_strimwidth(get_the_title(), 0, 18, '..'); ?></a></h4>
+                            <?php
+                                $terms = get_the_terms(get_the_ID(  ), 'portfolio_cat' );
+                                foreach ($terms as $term) {
+                                    ?>
+                                    <p><?php echo $term->name ?></p>
+                                <?php   
+                                }
                             ?>
-                        </p>
                     </div>
                 </div>
             </div>

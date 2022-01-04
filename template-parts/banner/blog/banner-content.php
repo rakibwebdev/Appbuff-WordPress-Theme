@@ -19,7 +19,13 @@ $banner_img_link = APPBUFFF_IMG . '/banner/6.jpg';
                             </ul>
                         </div>
                         <div class="bread-title">
-                            <h2><?php the_title(); ?></h2>
+                            <h2><?php 
+                            	if(!is_singular()){
+                                 echo "Our Latest News";
+                                }else{
+                            		the_title(); 
+                                    }
+                                    ?></h2>
                         </div>
                     </div>
                 </div>

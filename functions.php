@@ -8,7 +8,7 @@
 // shorthand contants
 // ------------------------------------------------------------------------
 define('APPBUFFF_THEME', 'Appbuff Theme');
-define('APPBUFFF_VERSION', '1.0.1');
+define('APPBUFFF_VERSION', '1.0.2');
 define('APPBUFFF_MINWP_VERSION', '4.3');
 
 
@@ -172,9 +172,9 @@ add_action( 'init', 'appbuff_portfolio' );
 function portfolio_taxonomy() {
 
 	$labels = array(
-		'name'                       => _x( 'Categories', 'Taxonomy General Name', 'appbuff' ),
-		'singular_name'              => _x( 'Category', 'Taxonomy Singular Name', 'appbuff' ),
-		'menu_name'                  => __( 'Category', 'appbuff' ),
+		'name'                       => _x( 'Port Categories', 'Taxonomy General Name', 'appbuff' ),
+		'singular_name'              => _x( 'Port Category', 'Taxonomy Singular Name', 'appbuff' ),
+		'menu_name'                  => __( 'Port Category', 'appbuff' ),
 		'all_items'                  => __( 'All Items', 'appbuff' ),
 		'parent_item'                => __( 'Parent Item', 'appbuff' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'appbuff' ),

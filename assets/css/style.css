@@ -6401,3 +6401,10 @@ color: #050748 !important;
   width: 100%;
   list-style: none;
 }
+.ekit-wid-con .elementskit-clients-slider .single-client{
+  background-color: unset !important;
+  box-shadow: unset !important;
+}
+.elementskit-clients-slider .slick-slide{
+  margin-left: 0px !important;
+}

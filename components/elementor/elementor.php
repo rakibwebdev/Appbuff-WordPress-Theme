@@ -104,6 +104,9 @@ class APPBUFF_Shortcode{
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/image-box-style3.php';
         $widgets_manager->register_widget_type(new Elementor\Appbuff_image_box_style3());
 
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/image-box-style4.php';
+        $widgets_manager->register_widget_type(new Elementor\Appbuff_image_box_style4());
+
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/office-location.php';
         $widgets_manager->register_widget_type(new Elementor\Office_Location());
 
@@ -127,6 +130,9 @@ class APPBUFF_Shortcode{
 
         require_once APPBUFFF_COMPONENTS.'/elementor/widgets/portfolio-list.php';
         $widgets_manager->register_widget_type(new Elementor\Portfolio_List());
+        
+        require_once APPBUFFF_COMPONENTS.'/elementor/widgets/work-process.php';
+        $widgets_manager->register_widget_type(new Elementor\Work_Process());
     }
     
 	public static function APPBUFF_get_instance() {
